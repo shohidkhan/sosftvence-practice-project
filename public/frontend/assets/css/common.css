@@ -1,0 +1,197 @@
+/* google fonts */
+/* inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+/* google fonts */
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+strong,
+i,
+ol,
+ul,
+li,
+form,
+label,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+.my-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.btn-common {
+  display: inline-flex;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  background: #34b26f;
+  transition: 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-common svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-common:hover {
+  background: #28a25f;
+}
+
+.btn-common:active {
+  transform: scale(0.95);
+}
+
+.section-title {
+  color: #333;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+}
+
+.mobile-nav-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.mobile-nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1350px) {
+  .my-container {
+    padding: 0 20px;
+  }
+
+  .btn-common {
+    padding: 12px 20px;
+  }
+
+  .section-title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+/* 1024px and below */
+@media (max-width: 1024px) {
+  .btn-common {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+
+  .btn-common svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .section-title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+/* 768px and below */
+@media (max-width: 768px) {
+  .btn-common {
+    padding: 8px 16px;
+    font-size: 15px;
+  }
+
+  .btn-common svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+}
+
+/* 480px and below */
+@media (max-width: 480px) {
+  .btn-common {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .btn-common svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+/* 375px and below */
+@media (max-width: 375px) {
+  .btn-common {
+    padding: 6px 12px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
