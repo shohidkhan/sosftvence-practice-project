@@ -15,6 +15,10 @@ class ClientMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if(auth()->user()->user_type == 'client'){
+            return $next($request);
+        }
+
+        abort(403, 'Unauthorized action.');
     }
 }

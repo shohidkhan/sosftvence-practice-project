@@ -51,6 +51,10 @@ class RegisteredUserController extends Controller
 
         if(auth()->user()->user_type=='admin'){
             return redirect()->intended(route('admin.dashboard', absolute: false));
+        }elseif(auth()->user()->user_type=='owner'){
+            return redirect()->intended(route('owner.dashboard', absolute: false));
+        }elseif(auth()->user()->user_type=='client'){
+            return redirect()->intended(route('client.dashboard', absolute: false));
         }
     }
 }

@@ -21,7 +21,7 @@
         @include('backend.partials.top_bar')
 
         <div class="main-content">
-          @yield('admin_dashboard')
+          @yield('dashboard')
         </div>
       </div>
     </div>

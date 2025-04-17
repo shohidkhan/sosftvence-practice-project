@@ -1,6 +1,6 @@
 <aside class="dashboard-sidebar" id="sidebar">
     <a href="./index.html" class="logo d-block">
-      <img src="./assets/images/favicon.png" alt="logo" />
+      <img src="{{ asset('frontend') }}/./assets/images/favicon.png" alt="logo" />
     </a>
     <div class="dashboard-sidebar-menu-wrapper">
       <nav class="dashboard-sidebar-menu">
@@ -40,6 +40,9 @@
           </svg>
           Overview</a
         >
+        @if (auth()->user()->user_type=='client')
+          
+        
         <a href="./dashboard-new-campaigns.html" class="menu-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,6 +115,113 @@
           </svg>
           Invoice</a
         >
+        @endif
+
+        @if (auth()->user()->user_type == 'owner')
+        <a href="./dashboard-new-campaigns.html" class="menu-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="menu-item-svg"
+          >
+            <path
+              d="M22 19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H4C3.46957 21 2.96086 20.7893 2.58579 20.4142C2.21071 20.0391 2 19.5304 2 19V5C2 4.46957 2.21071 3.96086 2.58579 3.58579C2.96086 3.21071 3.46957 3 4 3H9L11 6H20C20.5304 6 21.0391 6.21071 21.4142 6.58579C21.7893 6.96086 22 7.46957 22 8V19Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 11V17"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9 14H15"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Add a New Singage</a
+        >
+        <a href="./dashboard-invoice.html" class="menu-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="menu-item-svg"
+          >
+            <path
+              d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M14 2V8H20"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 13H8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 17H8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 9H9H8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Income Statement</a
+        >
+        @endif
+
+        @if (auth()->user()->user_type=='admin')
+        <a href="./dashboard-admin-document.html " class="menu-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="menu-item-svg">
+            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 2V8H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M16 13H8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M16 17H8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10 9H9H8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          Documents</a>
+
+          <a href="./dashboard-admin-request.html" class="menu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="menu-item-svg">
+              <path d="M17 1L21 5L17 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M3 11V9C3 7.93913 3.42143 6.92172 4.17157 6.17157C4.92172 5.42143 5.93913 5 7 5H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M7 23L3 19L7 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M21 13V15C21 16.0609 20.5786 17.0783 19.8284 17.8284C19.0783 18.5786 18.0609 19 17 19H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Request</a>
+
+            <a href="./dashboard-admin-request.html" class="menu-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="menu-item-svg">
+                <path d="M17 1L21 5L17 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 11V9C3 7.93913 3.42143 6.92172 4.17157 6.17157C4.92172 5.42143 5.93913 5 7 5H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7 23L3 19L7 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M21 13V15C21 16.0609 20.5786 17.0783 19.8284 17.8284C19.0783 18.5786 18.0609 19 17 19H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Video Upload</a>
+        @endif
+        
       </nav>
       <div class="sidebar-footer">
         <a href="./dashboard-tutorials.html" class="menu-item">
@@ -156,36 +266,42 @@
           </svg>
           Settings</a
         >
-        <a href="#" class="menu-item">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            class="menu-item-svg"
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <x-responsive-nav-link 
+          onclick="event.preventDefault();
+                      this.closest('form').submit();" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              class="menu-item-svg"
+            >
+              <path
+                d="M8.33398 14.1663L12.5007 9.99967L8.33398 5.83301"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.5 10H2.5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.5 2.5H15.8333C16.2754 2.5 16.6993 2.67559 17.0118 2.98816C17.3244 3.30072 17.5 3.72464 17.5 4.16667V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H12.5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Logout</x-responsive-nav-link
           >
-            <path
-              d="M8.33398 14.1663L12.5007 9.99967L8.33398 5.83301"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M12.5 10H2.5"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M12.5 2.5H15.8333C16.2754 2.5 16.6993 2.67559 17.0118 2.98816C17.3244 3.30072 17.5 3.72464 17.5 4.16667V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H12.5"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          Logout</a
-        >
+        </form>
+        
       </div>
     </div>
   </aside>

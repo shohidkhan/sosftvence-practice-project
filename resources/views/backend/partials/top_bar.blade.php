@@ -3,7 +3,7 @@
       <!-- Toggle Button for Sidebar -->
       <button class="toggle-button" id="toggle-button">☰</button>
 
-      Hello Tanzir
+      Hello {{ auth()->user()->name }}
       <div class="dashboard-top-bar-date">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@
           <div class="notification-list">
             <div class="notification-item">
               <img
-                src="./assets/images/profile-img.png"
+                src="{{ asset('frontend') }}/./assets/images/profile-img.png"
                 alt="Ethan"
                 class="user-avatar"
               />
@@ -99,7 +99,7 @@
             </div>
             <div class="notification-item">
               <img
-                src="./assets/images/profile-img.png"
+                src="{{ asset('fronted') }}/./assets/images/profile-img.png"
                 alt="Sophia"
                 class="user-avatar"
               />
@@ -152,13 +152,13 @@
       >
         <div class="dashboard-profile-img-wrapper">
           <img
-            src="./assets/images/profile-img.png"
+            src="{{ asset('frontend') }}/./assets/images/profile-img.png"
             alt="Profile"
             width="40"
           />
         </div>
 
-        <h4 class="dashboard-profile-name">Tanzir Rahman</h4>
+        <h4 class="dashboard-profile-name">{{ auth()->user()->name}}</h4>
       </a>
     </div>
   </div>
