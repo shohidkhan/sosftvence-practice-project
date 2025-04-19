@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Web\Backend\Owner;
 
-use App\Http\Controllers\Controller;
+use App\Models\Singage;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
@@ -11,6 +12,7 @@ class DashboardController extends Controller
 
 
     public function index(){
-        return view('backend.owner.dashboard');
+        $signages=Singage::all();
+        return view('backend.owner.dashboard',compact('signages'));
     }
 }

@@ -33,7 +33,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'user_type'=>['required','string']
+            'user_type'=>['required']
             
         ]);
 
@@ -49,12 +49,12 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        if(auth()->user()->user_type=='admin'){
-            return redirect()->intended(route('admin.dashboard', absolute: false));
-        }elseif(auth()->user()->user_type=='owner'){
+        if(auth()->user()->user_type=='owner'){
             return redirect()->intended(route('owner.dashboard', absolute: false));
         }elseif(auth()->user()->user_type=='client'){
             return redirect()->intended(route('client.dashboard', absolute: false));
+        }else{
+            return redirect()->intended(route('admin.dashboard', absolute: false));
         }
     }
 }
